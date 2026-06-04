@@ -1,0 +1,29 @@
+-- 1. Вывести все товары
+SELECT * FROM products;
+
+-- 2. Только название и категория
+SELECT name, category FROM products;
+
+-- 3. Список уникальных категорий
+SELECT DISTINCT category FROM products;
+
+-- 4. Сортировка по названию (А-Я)
+SELECT * FROM products ORDER BY name ASC;
+
+-- 5. Сортировка по названию (Я-А)
+SELECT * FROM products ORDER BY name DESC;
+
+-- 6. Первые 10 товаров
+SELECT * FROM products LIMIT 10;
+
+-- 7. 10 товаров, начиная с 11-й записи
+SELECT * FROM products LIMIT 10 OFFSET 10;
+
+-- 8. 5 случайных товаров
+SELECT * FROM products ORDER BY RANDOM() LIMIT 5;
+
+-- 9. Все категории без DISTINCT, отсортированные по алфавиту
+SELECT category FROM products ORDER BY category ASC;
+
+-- 10. Сортировка сначала по категории, затем по названию
+SELECT * FROM products ORDER BY category, name;

@@ -1,0 +1,4 @@
+-- Увеличить цену на 10% для товаров с ценой меньше 1000
+UPDATE prices 
+SET price = price * 1.1
+WHERE price < 1000;

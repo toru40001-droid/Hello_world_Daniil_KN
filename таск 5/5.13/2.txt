@@ -1,0 +1,4 @@
+-- Увеличить цену на 5% для первых пяти товаров, если их цена меньше 10000
+UPDATE prices 
+SET price = price * 1.05
+WHERE product_id <= 5 AND price < 10000;

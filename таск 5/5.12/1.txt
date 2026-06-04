@@ -1,0 +1,10 @@
+-- 1. Количество товаров, сгруппированное по категориям
+SELECT category, COUNT(*) 
+FROM products 
+GROUP BY category;
+
+-- 2. Количество товаров в каждой категории, отсортированное по убыванию
+SELECT category, COUNT(*) as total_count
+FROM products 
+GROUP BY category 
+ORDER BY total_count DESC;

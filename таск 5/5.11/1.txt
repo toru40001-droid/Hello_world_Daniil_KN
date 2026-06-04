@@ -1,0 +1,31 @@
+-- 1. Товары категории «Электроника»
+SELECT * FROM products 
+WHERE category = 'Электроника';
+
+-- 2. Категория «Одежда», название содержит «женские»
+SELECT * FROM products 
+WHERE category = 'Одежда' AND name ILIKE '%женские%';
+
+-- 3. Категория «Продукты» или «Книги»
+SELECT * FROM products 
+WHERE category IN ('Продукты', 'Книги');
+
+-- 4. Все товары, НЕ относящиеся к категории «Бытовая техника»
+SELECT * FROM products 
+WHERE category <> 'Бытовая техника';
+
+-- 5. Товары из категорий «Электроника», «Одежда», «Книги»
+SELECT * FROM products 
+WHERE category IN ('Электроника', 'Одежда', 'Книги');
+
+-- 6. Сложная фильтрация (Электроника с Samsung ИЛИ Бытовая техника)
+SELECT * FROM products 
+WHERE (category = 'Электроника' AND name ILIKE '%Samsung%')
+   OR (category = 'Бытовая техника');
+
+-- 7. Фильтрация по категориям, диапазону ID и исключению слова
+SELECT * FROM products 
+WHERE (category IN ('Электроника', 'Одежда', 'Бытовая техника') 
+       AND id BETWEEN 1 AND 15 
+       AND name NOT ILIKE '%Samsung%')
+   OR (category = 'Книги');
